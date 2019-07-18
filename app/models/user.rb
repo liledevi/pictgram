@@ -4,8 +4,7 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true, format: { with: REGEX }
   
   has_secure_password
-  validates :password, length: { in: 8..32 }, format: { with: /\A[a-zA-Z0-9]+\z/ }
-  validates :password_confirmation, length: { in: 8..32 }, format: { with: /\A[a-zA-Z0-9]+\z/ }
+  validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{8,32}+\z/i }
   
 end
 
