@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to root_path, success: "登録が完了しました！"
     else
-      flash.now[:danger] = @user.errors.full_messages
+      flash.now[:danger] = 'ログインに失敗しました><'
       render :new
     end
   end
